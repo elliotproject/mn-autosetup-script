@@ -212,3 +212,6 @@ su -c "/usr/local/bin/elli-cli masternode status" $USER
 sleep 5
 
 echo "" && echo "Masternode setup completed." && echo ""
+
+echo "Server reboot in 5 seconds. Masternode will be started automatically after reboot."
+sleep 5 && reboot
