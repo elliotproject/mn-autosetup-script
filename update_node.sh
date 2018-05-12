@@ -19,6 +19,14 @@ fi
 USER=`ps u $(pgrep ellid) | grep ellid | cut -d " " -f 1`
 USERHOME=`eval echo "~$USER"`
 
+# upgrade Ubuntu
+echo "Upgrade system..."
+apt -qq update > /dev/null 2>&1
+apt -qq -y dist-upgrade > /dev/null 2>&1
+apt -qq -y autoremove > /dev/null 2>&1
+apt -qq autoclean > /dev/null 2>&1
+
+
 echo "Shutting down masternode..."
 if [ -e /etc/systemd/system/ellid.service ]; then
     systemctl stop ellid
@@ -29,9 +37,10 @@ fi
 echo "Installing ELLI $ELLIVERSION..."
 mkdir ./elli-temp && cd ./elli-temp
 wget $TARBALLURL
-tar -xzvf $TARBALLNAME && mv bin elli-$ELLIVERSION
-yes | cp -rf ./elli-$ELLIVERSION/ellid /usr/local/bin
-yes | cp -rf ./elli-$ELLIVERSION/elli-cli /usr/local/bin
+tar -xzvf $TARBALLNAME
+yes | cp -rf ./elli-$ELLIVERSION/bin/ellid /usr/local/bin
+yes | cp -rf ./elli-$ELLIVERSION/bin/elli-cli /usr/local/bin
+yes | cp -rf ./elli-$ELLIVERSION/bin/elli-tx /usr/local/bin
 cd ..
 rm -rf ./elli-temp
 
@@ -90,8 +99,4 @@ done
 
 su -c "elli-cli masternode status" $USER
 
-cat << EOL
-
-Masternode update completed.
-
-EOL
+echo "" && echo "Masternode update completed." && echo ""
