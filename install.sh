@@ -96,6 +96,25 @@ apt -qq autoclean > /dev/null 2>&1
 # Install Fail2Ban
 if [[ ("$FAIL2BAN" == "y" || "$FAIL2BAN" == "Y" || "$FAIL2BAN" == "") ]]; then
     aptitude -y -q install fail2ban
+    touch /etc/fail2ban/jail.local
+    cat > /etc/fail2ban/jail.local << EOL
+[ssh]
+enabled  = true
+port     = ssh
+filter   = sshd
+logpath  = /var/log/auth.log
+maxretry = 6
+bantime = 3600
+bantime.increment = true
+bantime.rndtime = 10m
+
+[ssh-ddos]
+enabled = true
+port = ssh
+filter = sshd-ddos
+logpath = /var/log/auth.log
+maxretry = 2
+EOL
     service fail2ban restart
 fi
 
