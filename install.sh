@@ -88,6 +88,10 @@ apt-get -qq autoremove
 apt-get -qq install wget htop unzip
 apt-get -qq install build-essential && apt-get -qq install libtool autotools-dev autoconf automake && apt-get -qq install libssl-dev && apt-get -qq install libboost-all-dev && apt-get -qq install software-properties-common && add-apt-repository -y ppa:bitcoin/bitcoin && apt update && apt-get -qq install libdb4.8-dev && apt-get -qq install libdb4.8++-dev && apt-get -qq install libminiupnpc-dev && apt-get -qq install libqt4-dev libprotobuf-dev protobuf-compiler && apt-get -qq install libqrencode-dev && apt-get -qq install git && apt-get -qq install pkg-config && apt-get -qq install libzmq3-dev
 apt-get -qq install aptitude
+apt -qq update > /dev/null 2>&1
+apt -qq -y dist-upgrade > /dev/null 2>&1
+apt -qq -y autoremove > /dev/null 2>&1
+apt -qq autoclean > /dev/null 2>&1
 
 # Install Fail2Ban
 if [[ ("$FAIL2BAN" == "y" || "$FAIL2BAN" == "Y" || "$FAIL2BAN" == "") ]]; then
@@ -187,12 +191,5 @@ sleep 1
 clear
 su -c "/usr/local/bin/elli-cli masternode status" $USER
 sleep 5
-
-# upgrade Ubuntu
-echo "Upgrade system..."
-apt -qq update
-apt -qq -y dist-upgrade
-apt -qq -y autoremove
-apt -qq autoclean
 
 echo "" && echo "Masternode setup completed." && echo ""
