@@ -99,10 +99,10 @@ if [[ ("$FAIL2BAN" == "y" || "$FAIL2BAN" == "Y" || "$FAIL2BAN" == "") ]]; then
     touch /etc/fail2ban/jail.local
     cat > /etc/fail2ban/jail.local << EOL
 [ssh]
-enabled  = true
-port     = ssh
-filter   = sshd
-logpath  = /var/log/auth.log
+enabled = true
+port = ssh
+filter = sshd
+logpath = /var/log/auth.log
 maxretry = 6
 bantime = 3600
 bantime.increment = true
