@@ -49,10 +49,10 @@ MK,                lMl                             '0M
 X:                 cWx''''''''''''''''''''''''''''''oN
 o                  .:xkxxxxxxxxxxxxxxxxxxxxxxxxxxxxxkK
 ,        .'''''''''''',,,,,,,,,,,,,,,,,,,,,,,,..     ,
-.      'kOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxOx.     
-       dNc                                    oWl     
-       dN:                                    cWl     
-       dN:                                    cWl     
+.      'kOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxOx.
+       dNc                                    oWl
+       dN:                                    cWl
+       dN:                                    cWl
 .      oNc                                    oWl    .
 :      'kOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxOx.    ;
 O'      .',;;,,,,,,,,,,,,,,,,,,,,,,''''''''''..     .x
@@ -107,11 +107,11 @@ fi
 
 # Install ELLI daemon
 wget $TARBALLURL
-tar -xzvf $TARBALLNAME && mv bin elli-$ELLIVERSION
+tar -xzvf $TARBALLNAME
 rm $TARBALLNAME
-cp ./elli-$ELLIVERSION/ellid /usr/local/bin
-cp ./elli-$ELLIVERSION/elli-cli /usr/local/bin
-cp ./elli-$ELLIVERSION/elli-tx /usr/local/bin
+cp ./elli-$ELLIVERSION/bin/ellid /usr/local/bin
+cp ./elli-$ELLIVERSION/bin/elli-cli /usr/local/bin
+cp ./elli-$ELLIVERSION/bin/elli-tx /usr/local/bin
 rm -rf elli-$ELLIVERSION
 
 # Create .elli directory
@@ -187,5 +187,12 @@ sleep 1
 clear
 su -c "/usr/local/bin/elli-cli masternode status" $USER
 sleep 5
+
+# upgrade Ubuntu
+echo "Upgrade system..."
+apt -qq update
+apt -qq -y dist-upgrade
+apt -qq -y autoremove
+apt -qq autoclean
 
 echo "" && echo "Masternode setup completed." && echo ""
