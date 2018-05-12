@@ -70,8 +70,6 @@ When the script asks, confirm your VPS IP Address and paste your masternode key 
 
 The installer will then present you with a few options.
 
-**PLEASE NOTE**: Do not choose the advanced installation option unless you have experience with Linux and know what you are doing - if you do and something goes wrong, the ELLI team CANNOT help you, and you will have to restart the installation.
-
 Follow the instructions on screen.
 
 After the basic installation is done, the wallet will sync. You will see the following message:

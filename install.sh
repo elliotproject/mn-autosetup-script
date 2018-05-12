@@ -65,45 +65,11 @@ MMMMMMMNkoooooooooooooooooooooooooxKx.      ,dXMMMMMMM
 MMMMMMMMMMMNOoccccccccccccccccccccc,.    'ckNMMMMMMMMM
 MMMMMMMMMMMMNOd:'.                  .':oONMMMMMMMMMMMM
 MMMMMMMMMMMMMMMMNOo:'..         .';okXMMMMMMMMMMMMMMMM
- +------------------------------------------------+
- |                                                |
- |You can choose between two installation options:|::
- |             default and advanced.              |::
- |                                                |::
- | The advanced installation will install and run |::
- |  the masternode under a non-root user. If you  |::
- |  don't know what that means, use the default   |::
- |              installation method.              |::
- |                                                |::
- | Otherwise, your masternode will not work, and  |::
- | the ELLI Team CANNOT assist you in repairing   |::
- |        it. You will have to start over.        |::
- |                                                |::
- |Don't use the advanced option unless you are an |::
- |            experienced Linux user.             |::
- |                                                |::
- +------------------------------------------------+::
-   ::::::::::::::::::::::::::::::::::::::::::::::::::
 "
 
 sleep 5
 
-read -e -p "Use the Advanced Installation? [N/y] : " ADVANCED
-
-if [[ ("$ADVANCED" == "y" || "$ADVANCED" == "Y") ]]; then
-    
-    USER=elli
-    
-    adduser $USER --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password > /dev/null
-    
-    echo "" && echo 'Added user "elli"' && echo ""
-    sleep 1
-    
-else
-    
-    USER=root
-    
-fi
+USER=root
 
 USERHOME=`eval echo "~$USER"`
 
