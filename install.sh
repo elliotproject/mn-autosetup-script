@@ -107,13 +107,6 @@ maxretry = 6
 bantime = 3600
 bantime.increment = true
 bantime.rndtime = 10m
-
-[ssh-ddos]
-enabled = true
-port = ssh
-filter = sshd-ddos
-logpath = /var/log/auth.log
-maxretry = 2
 EOL
     service fail2ban restart
 fi
