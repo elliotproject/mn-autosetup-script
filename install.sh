@@ -14,8 +14,8 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 # Check if we have enough memory
-if [[ `free -m | awk '/^Mem:/{print $2}'` -lt 512 ]]; then
-    echo "This installation requires at least 512MB of RAM.";
+if [[ `free -m | awk '/^Mem:/{print $2}'` -lt 400 ]]; then
+    echo "This installation requires at least 400MB of RAM.";
     exit 1
 fi
 
