@@ -3,9 +3,9 @@
 clear
 
 # Set these to change the version of ELLI to install
-TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.14/elli-0.9.14-x86_64-linux-gnu.tar.gz"
-TARBALLNAME="elli-0.9.14-x86_64-linux-gnu.tar.gz"
-ELLIVERSION="0.9.14"
+TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.15/elli-0.9.15-linux.tar.gz"
+TARBALLNAME="elli-0.9.15-linux.tar.gz"
+ELLIVERSION="0.9.15"
 
 # Check if we are root
 if [ "$(id -u)" != "0" ]; then
@@ -125,9 +125,9 @@ fi
 wget $TARBALLURL
 tar -xzvf $TARBALLNAME
 rm $TARBALLNAME
-cp ./elli-$ELLIVERSION/bin/ellid /usr/local/bin
-cp ./elli-$ELLIVERSION/bin/elli-cli /usr/local/bin
-cp ./elli-$ELLIVERSION/bin/elli-tx /usr/local/bin
+cp ./elli-$ELLIVERSION/ellid /usr/local/bin
+cp ./elli-$ELLIVERSION/elli-cli /usr/local/bin
+cp ./elli-$ELLIVERSION/elli-tx /usr/local/bin
 rm -rf elli-$ELLIVERSION
 
 # Create .elli directory

@@ -38,9 +38,9 @@ echo "Installing ELLI $ELLIVERSION..."
 mkdir ./elli-temp && cd ./elli-temp
 wget $TARBALLURL
 tar -xzvf $TARBALLNAME
-yes | cp -rf ./elli-$ELLIVERSION/bin/ellid /usr/local/bin
-yes | cp -rf ./elli-$ELLIVERSION/bin/elli-cli /usr/local/bin
-yes | cp -rf ./elli-$ELLIVERSION/bin/elli-tx /usr/local/bin
+yes | cp -rf ./elli-$ELLIVERSION/ellid /usr/local/bin
+yes | cp -rf ./elli-$ELLIVERSION/elli-cli /usr/local/bin
+yes | cp -rf ./elli-$ELLIVERSION/elli-tx /usr/local/bin
 cd ..
 rm -rf ./elli-temp
 
