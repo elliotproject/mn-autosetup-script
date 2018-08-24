@@ -3,9 +3,9 @@
 clear
 
 # Set these to change the version of ELLI to install
-TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.14/elli-0.9.14-x86_64-linux-gnu.tar.gz"
-TARBALLNAME="elli-0.9.14-x86_64-linux-gnu.tar.gz"
-ELLIVERSION="0.9.14"
+TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.15/elli-0.9.15-linux.tar.gz"
+TARBALLNAME="elli-0.9.15-linux.tar.gz"
+ELLIVERSION="0.9.15"
 
 # Check if we are root
 if [ "$(id -u)" != "0" ]; then
