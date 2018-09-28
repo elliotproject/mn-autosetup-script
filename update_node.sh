@@ -62,7 +62,7 @@ After=network.target
 Type=forking
 User=${USER}
 WorkingDirectory=${USERHOME}
-ExecStart=/usr/local/bin/ellid -conf=${USERHOME}/.elli/elli.conf -datadir=${USERHOME}/.elli
+ExecStart=/usr/local/bin/ellid -conf=${USERHOME}/.elli/elli.conf -datadir=${USERHOME}/.elli -resync
 ExecStop=/usr/local/bin/elli-cli -conf=${USERHOME}/.elli/elli.conf -datadir=${USERHOME}/.elli stop
 Restart=on-abort
 [Install]
