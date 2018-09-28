@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.16/elli-0.9.16-linux.tar.gz"
-TARBALLNAME="elli-0.9.16-linux.tar.gz"
-ELLIVERSION="0.9.16"
+TARBALLURL="https://github.com/elliotproject/elli/releases/download/v0.9.17/elli-0.9.17-linux.tar.gz"
+TARBALLNAME="elli-0.9.17-linux.tar.gz"
+ELLIVERSION="0.9.17"
 
 CHARS="/-\|"
 
